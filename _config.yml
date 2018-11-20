@@ -1,0 +1,63 @@
+title: "Vietnam Kubernetes Community"
+description: Vietnam Kubernetes Community
+author: vietkubers
+github: https://github.com/vietkubers
+about: ""
+#disqus_shortname: truongnh-bk55-github-io
+#google_analytics: UA-126117321-1
+avatar_url: /static/img/vietkubers.png
+
+enableTags: true
+tagarray: []
+
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
+
+social:
+    - icon: fa-facebook
+      link: "https://www.facebook.com/groups/VietKubers/"
+    - icon: fa-github
+      link: "https://github.com/vietkubers"
+    - icon: fa-envelope
+      link: "mailto:haitruong-hust@bka.vn"
+
+share:
+  twitter_username: truongnh92
+#  fb_appid: 1749788565247320
+
+urls:
+    - text: About me
+      url: /about/
+    - text: Linux
+      url: /category/linux
+    - text: OpenStack
+      url: /category/openstack
+    - text: Networking
+      url: /category/networking
+    - text: Python
+      url: /category/python
+    - text: Golang
+      url: /category/golang
+    - text: Tutorials
+      url: /category/tutorials
+    - text: Raspberry Pi
+      url: /category/raspberry
+
+url: "https://vietkubers.github.io"
+baseurl: ""
+paginate: 20
+per_page: 20
+paginate_path: "/page/:num/"
+markdown: kramdown
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']
