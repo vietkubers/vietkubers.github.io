@@ -3,8 +3,8 @@ description: Vietnam Kubernetes Community
 author: VietKubers
 github: https://github.com/vietkubers
 about: ""
-#disqus_shortname: truongnh-bk55-github-io
-#google_analytics: UA-126117321-1
+disqus_shortname: vietkubers-github-io
+google_analytics: UA-129538755-1
 avatar_url: /static/img/vietkubers.png
 
 enableTags: true
