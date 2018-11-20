@@ -1,6 +1,6 @@
 title: "Vietnam Kubernetes Community"
 description: Vietnam Kubernetes Community
-author: vietkubers
+author: VietKubers
 github: https://github.com/vietkubers
 about: ""
 #disqus_shortname: truongnh-bk55-github-io
@@ -28,16 +28,16 @@ share:
 #  fb_appid: 1749788565247320
 
 urls:
-    - text: About me
+    - text: About us
       url: /about/
     - text: Linux
       url: /category/linux
-    - text: OpenStack
-      url: /category/openstack
+    - text: Kubernetes
+      url: /category/kubernetes
     - text: Networking
       url: /category/networking
-    - text: Python
-      url: /category/python
+    - text: Docker
+      url: /category/docker
     - text: Golang
       url: /category/golang
     - text: Tutorials
