@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deploying multiple nodes with Kubeadm
-date: 2018-11-16
+date: 2018-11-21
 categories: [linux, tutorials, kubernetes]
 tags: [Linux, Tutorials, Kubernetes]
 ---
@@ -12,16 +12,16 @@ tags: [Linux, Tutorials, Kubernetes]
 OS: Ubuntu 16.04 LTS
 
 **Master Node:**
-  - enp0s3: NAT (Access to Internet)
-  - enp0s8: 
-        - Host Only
-        - 192.168.205.10 (Master Node IP)
+- enp0s3: NAT (Access to Internet)
+- enp0s8: 
+  - Host Only
+  - 192.168.205.10 (Master Node IP)
         
 **Worker Node:**
-  - enp0s3: NAT (Access to Internet)
-  - enp0s8:
-          - Host Only
-          - 192.168.205.11 (Worker Node IP)
+- enp0s3: NAT (Access to Internet)
+- enp0s8:
+  - Host Only
+  - 192.168.205.11 (Worker Node IP)
  
 Configure static ip for enp0s8 interface:
 ```
