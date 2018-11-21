@@ -2,8 +2,8 @@
 layout: post
 title: Github workflow for contributing to Kubernetes
 date: 2018-11-16
-categories: [linux, tutorials]
-tags: [linux, tutorials]
+categories: [linux, tutorials, kubernetes]
+tags: [Linux, Tutorials, Kubernetes]
 ---
 
 #### Contents
