@@ -219,3 +219,4 @@ div.col-sm-3 img.profile-avatar {
     margin-top: 30px;
   }
 }
+pre { white-space: pre; overflow: auto; }
