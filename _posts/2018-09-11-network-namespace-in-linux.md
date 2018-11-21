@@ -21,7 +21,7 @@ Network namespace giúp chúng ta có các mạng riêng biệt trên một host
 
 Mỗi một namespace sẽ có những giao diện (***interface***) và bảng định tuyến (***routing table***) của riêng nó và tách biệt với các namespace khác. Ngoài ra, tiến trình (***process***) trên hệ thống có thể được liên kết với một network-namespace cụ thể.
 
-Network namespace được sử dụng nhiều trong các dự án OpenStack và Docker. Để có thể hiểu sâu được những dự án đó, bạn phải sử dụng thông thạo network-namespace.
+Network namespace được sử dụng nhiều trong các dự án OpenStack và Docker. Để có thể hiểu được một cách sâu sắc những dự án đó, bạn phải thông thạo network-namespace.
 
 
 <a name="-working-with-network-namespace"><a/>
