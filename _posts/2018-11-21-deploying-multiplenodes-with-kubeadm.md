@@ -38,7 +38,7 @@ Configure proxy for apt:
 $ sudo vim /etc/apt/apt.conf
 ...
 Acquire::http::proxy "http://[Proxy_Server]:[Proxy_Port]/";                                                                                                                                                
-Acquire::HTTP::proxy "http://[Proxy_Server]:[Proxy_Por]/";
+Acquire::HTTP::proxy "http://[Proxy_Server]:[Proxy_Port]/";
 ```
    
 Configure proxy for docker:
