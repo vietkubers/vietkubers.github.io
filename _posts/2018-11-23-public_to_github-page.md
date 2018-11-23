@@ -27,15 +27,13 @@ tags: [Linux, Tutorials, Kubernetes]
 ---
 ```
 Please refer to [this example post](https://raw.githubusercontent.com/vietkubers/vietkubers.github.io/master/_posts/2018-11-21-deploying-multiplenodes-with-kubeadm.md) for more details.  
-5. **Commit**, **push** and create your **Pull Request**
-
+5. **Commit**, **push** and create your **Pull Request**  
 For the step-by-step process, refer to this article [1]
 
-### Reference
+#### Reference
 
 [1] https://vietkubers.github.io/linux/tutorials/kubernetes/2018/11/16/github-workflow.html  
 
 
 
 *Author: [truongnh1992](https://github.com/truongnh1992)*
-
