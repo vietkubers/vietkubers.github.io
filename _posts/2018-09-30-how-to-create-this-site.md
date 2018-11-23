@@ -40,8 +40,8 @@ Toàn bộ mã nguồn của website này đều được công bố [tại đâ
 
 Hệ điều hành mình sử dụng là [GNU/Linux](https://www.debian.org/releases/stable/amd64/ch01s02.html.vi) (Debian, Fedora, Ubuntu) và MacOS.
 
-<a name="trinh-soan-thao"><a/>
-### 1.3. Trình soạn thảo
+<a name="chuong-trinh-soan-thao"><a/>
+### 1.3. Chương trình soạn thảo
 
 Editor được khuyên dùng [Sublime Text](https://www.sublimetext.com/3) và [vim](https://www.vim.org).
 
