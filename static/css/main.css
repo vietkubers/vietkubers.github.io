@@ -108,6 +108,7 @@ div.content pre {
   border: none;
 }
 div.content .highlight {
+	border-radius: 5px;
 	background: #333333;
 }
 footer {
