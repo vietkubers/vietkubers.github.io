@@ -54,6 +54,7 @@ Environment="HTTP_PROXY=http://[Proxy_Server]:[Proxy_Port]/"
 
 Adding kubernetes repo:
 ```
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 $ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" >> ~/kubernetes.list
 $ sudo mv ~/kubernetes.list /etc/apt/sources.list.d
 $ sudo apt-get update
