@@ -1,0 +1,72 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Navigation
+  version: 
+  folders:
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+      
+    - title: About Us
+      url: /aboutus.html
+      output: web, pdf
+
+  - title: Linux
+    output: web, pdf
+    folderitems:
+
+      - title: Linux articles
+        url: /tag_linux.html
+        output: web, pdf
+
+  - title: Kubernetes
+    output: web, pdf
+    folderitems:
+
+    - title: Kubernetes articles
+      url: /tag_kubernetes.html
+      output: web, pdf
+
+  - title: Docker
+    output: web, pdf
+
+    folderitems:
+    - title: Docker articles
+      url: /tag_docker.html
+      output: web, pdf
+
+  - title: Networking
+    output: web, pdf
+
+    folderitems:
+    - title: Networking articles
+      url: /tag_networking.html
+      output: web, pdf
+
+  - title: Golang
+    output: web, pdf
+
+    folderitems:
+    - title: Golang articles
+      url: /tag_go.html
+      output: web, pdf
+
+  - title: Tutorial
+    output: web, pdf
+
+    folderitems:
+    - title: All of tutorial
+      url: /tag_tutorials.html
+      output: web, pdf
+
+
+  - title: Raspberry Pi
+    output: web, pdf
+
+    folderitems:
+    - title: Raspberry Pi articles
+      url: /tag_raspberry.html
+      output: web, pdf

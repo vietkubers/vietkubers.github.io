@@ -1,0 +1,20 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Topnav
+  items:
+    - title: GitHub
+      external_url: https://github.com/vietkubers
+    - title: Articles
+      url: /news
+    - title: Social
+      external_url: https://www.facebook.com/groups/VietKubers
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: Meetup
+      folderitems:
+        - title: 1st Meetup
+          external_url: https://www.meetup.com/Vietkubers-Vietnam-Kubernetes-Community/events/257150787/
