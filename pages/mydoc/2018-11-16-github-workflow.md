@@ -54,7 +54,7 @@ $ git checkout master
 $ git rebase upstream/master
 ```
 
-> Please don't use `git pull` instead of `git fetch / rebase`. `git pull` does a merge, which leaves merge commits. These make the commit history messy and violate the principle commits.
+{% include note.html content="Please don't use `git pull` instead of `git fetch / rebase`. `git pull` does a merge, which leaves merge commits. These make the commit history messy and violate the principle commits." %}
 
 Create a new branch:
 ```sh
