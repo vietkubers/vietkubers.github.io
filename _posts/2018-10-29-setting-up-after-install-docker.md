@@ -4,7 +4,7 @@ tags: [docker, tutorials, kubernetes]
 keywords: docker, networking, kubernetes
 last_updated: October 29, 2018
 sidebar: mydoc_sidebar
-permalink: 2018-10-29-setting-up-after-install-docker.html
+permalink: setting-up-after-install-docker.html
 folder: mydoc
 ---
 
