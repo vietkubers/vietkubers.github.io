@@ -1,7 +1,6 @@
 ---
 title: DIY, code nháy LED với Python trên Raspberry Pi 2
-tags: [raspberry]
-keywords: raspberry
+tags: [news]
 last_updated: October 27, 2018
 sidebar: mydoc_sidebar
 permalink: led-blinking.html

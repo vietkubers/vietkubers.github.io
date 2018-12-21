@@ -1,7 +1,6 @@
 ---
 title: Github workflow for contributing to Kubernetes
-tags: [linux, tutorials, kubernetes]
-keywords: linux, networking
+tags: [news]
 last_updated: November 16, 2018
 sidebar: mydoc_sidebar
 permalink: github-workflow.html

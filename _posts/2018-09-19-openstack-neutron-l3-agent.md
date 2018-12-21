@@ -1,7 +1,6 @@
 ---
 title: OpenStack Neutron L3 Agent
-tags: [linux, networking]
-keywords: linux, networking
+tags: [news]
 last_updated: September 19, 2018
 sidebar: mydoc_sidebar
 permalink: openstack-neutron-l3-agent.html

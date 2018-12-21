@@ -1,7 +1,6 @@
 ---
 title: How to public your posts to github-page?
-tags: [tutorials]
-keywords: tutorials, git, github
+tags: [news]
 last_updated: November 23, 2018
 sidebar: mydoc_sidebar
 permalink: public_to_github-page.html

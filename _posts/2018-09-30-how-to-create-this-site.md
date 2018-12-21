@@ -1,7 +1,6 @@
 ---
 title: Cách tạo một website cá nhân với Github Pages
-tags: [tutorials]
-keywords: tutorials
+tags: [news]
 last_updated: September 30, 2018
 sidebar: mydoc_sidebar
 permalink: how-to-create-this-site.html

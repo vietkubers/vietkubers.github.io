@@ -1,7 +1,6 @@
 ---
 title: Deploying multiple nodes with Kubeadm
-tags: [docker, tutorials, kubernetes]
-keywords: docker, networking, kubernetes
+tags: [news]
 last_updated: November 21, 2018
 sidebar: mydoc_sidebar
 permalink: deploying-multiplenodes-with-kubeadm.html

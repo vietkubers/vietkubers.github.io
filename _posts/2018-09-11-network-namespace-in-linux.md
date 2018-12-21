@@ -1,7 +1,6 @@
 ---
 title: Linux Network Namespace
-tags: [linux, networking, news]
-keywords: linux, networking
+tags: [news]
 last_updated: September 11, 2018
 sidebar: mydoc_sidebar
 permalink: network-namespace-in-linux.html

@@ -1,7 +1,6 @@
 ---
 title: Xác định địa chỉ IP và remote đến Raspberry Pi
-tags: [raspberry, networking, tutorial]
-keywords: raspberry, networking, tutorial
+tags: [news]
 last_updated: October 30, 2018
 sidebar: mydoc_sidebar
 permalink: remote-to-raspberrypi.html

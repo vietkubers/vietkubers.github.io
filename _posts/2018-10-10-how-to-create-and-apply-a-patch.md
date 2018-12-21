@@ -1,7 +1,6 @@
 ---
 title: How to create and apply a patch with Git
-tags: [tutorials]
-keywords: tutorials
+tags: [news]
 last_updated: October 10, 2018
 sidebar: mydoc_sidebar
 permalink: how-to-create-and-apply-a-patch.html

@@ -1,7 +1,6 @@
 ---
 title: Các bước sau khi cài đặt Docker trên hệ thống Linux
-tags: [docker, tutorials, kubernetes]
-keywords: docker, networking, kubernetes
+tags: [news]
 last_updated: October 29, 2018
 sidebar: mydoc_sidebar
 permalink: setting-up-after-install-docker.html
