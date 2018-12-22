@@ -934,16 +934,11 @@ a[href^="http://"]:after, a[href^="https://"]:after {
     padding-left: 3px;
 }
 
-/* Strip the outbound icon when this class is present */
-a[href].noCrossRef::after,
-a.no_icon:after
- {
-    content:"" !important;
-    padding-left: 0;
-}
-
 .btn-default {
+    background-color: #347DBE;
+    border: 0;
     margin-bottom: 10px;
+    color: white;
 }
 
 /* algolia search */

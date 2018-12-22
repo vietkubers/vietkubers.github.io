@@ -3,10 +3,10 @@ repository: vietkubers
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: VietKubers
+topnav_title: VietKubers Tech Blog
 # this appears on the top navigation bar next to the home button
 
-site_title: Vietnam Kubernetes Community
+site_title: VietKubers
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Vietnam Kubernetes Community
@@ -24,7 +24,7 @@ disqus_shortname: vietkubers-github-io
 google_analytics: UA-129538755-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
-host: 127.0.0.1
+host: localhost
 # the preview server used. Leave as is.
 
 port: 4000
