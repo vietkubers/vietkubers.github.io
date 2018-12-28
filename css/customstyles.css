@@ -936,10 +936,10 @@ a[href^="http://"]:, a[href^="https://"]: {
 }
 
 .btn-default {
-    background-color: #347DBE;
+    background-color: #D9EDF7;
     border: 0;
     margin-bottom: 10px;
-    color: white;
+    color: #31708f;
 }
 
 /* algolia search */
