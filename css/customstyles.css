@@ -128,8 +128,8 @@ th {
     text-align: left;
 }
 table {
-    max-width: 90%;
-    margin-bottom: 20px;
+    width: 1000px;
+    margin-bottom: 100px;
     border: 1px solid #dedede;
 }
 
