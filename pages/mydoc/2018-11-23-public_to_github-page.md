@@ -19,7 +19,7 @@ $ cd vietkubers.github.io.git/_post
 $ touch yyyy-mm-dd-name-of-article.md
 ```
 4. **Modify** the created post with declaration section as:
-```
+```yaml
 ---
 title: Deploying multiple nodes with Kubeadm
 tags: [linux, tutorials, kubernetes]
