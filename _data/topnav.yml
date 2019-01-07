@@ -5,8 +5,8 @@ topnav:
   items:
     - title: GitHub
       external_url: https://github.com/vietkubers
-    - title: Articles
-      url: /news
+    - title: Documents
+      external_url: https://github.com/vietkubers/Documents
     - title: Social
       external_url: https://www.facebook.com/groups/VietKubers
 
