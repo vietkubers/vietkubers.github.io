@@ -67,9 +67,9 @@ Install docker kubelet kubeadm kubectl kubernetes-cni for each node:
 $ sudo apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni --allow-unauthenticated
 ```
  
-Deploy Master node:
+Deploy Master node: (In case of using flannel overlay network)
 ```
-annp@k8s-master$ sudo kubeadm init --apiserver-advertise-address=192.168.205.10
+annp@k8s-master$ sudo kubeadm init --apiserver-advertise-address=${master-ip-address} --pod-network-cidr=10.244.0.0/16
 ```
 
 Apply a pods network:
