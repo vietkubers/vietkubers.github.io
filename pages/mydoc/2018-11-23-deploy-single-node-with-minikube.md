@@ -29,7 +29,7 @@ Config apt proxy:
 $ sudo vim /etc/apt/apt.conf
 ...
 Acquire::http::proxy "http://[Proxy_Server]:[Proxy_Port]/";
-Acquire::HTTP::proxy "http://[Proxy_Server]:[Proxy_Port]/";
+Acquire::https::proxy "http://[Proxy_Server]:[Proxy_Port]/";
 ```
 
 Please note that some distros do not keep proxy settings
