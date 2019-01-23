@@ -7,33 +7,33 @@ permalink: preparing-env-for-go.html
 folder: mydoc
 ---
 
-## So lu?c v? ngôn ng? GO:
+## Sơ lược về ngôn ngữ GO:
 
-Go là m?t ngôn ng? l?p trình mã ngu?n m? [Open Source](https://github.com/golang/go), là ngôn ng? d?ng biên d?ch. Go có c?ng d?ng phát tri?n l?n và có 1 h? th?ng d? ki?m duy?t code nhu [Openstack](https://review.openstack.org) là [Go review](https://go-review.googlesource.com/q/status:open).
+Go là một ngôn ngữ lập trình mã nguồn mở [Open Source](https://github.com/golang/go), là ngôn ngữ dạng biên dịch. Go có cộng đồng phát triển lớn và có 1 hệ thống để kiểm duyệt code như [Openstack](https://review.openstack.org) là [Go review](https://go-review.googlesource.com/q/status:open).
 
-Tru?c khi Go h? tr? [Go module](https://github.com/golang/go/wiki/Modules), giúp cho các l?p trình viên don gi?n hóa d?i v?i các package dependency, thì khái ni?m GOPATH là khái ni?m mà b?t kì l?p trình viên nào cung ph?i bi?t và xây d?ng code theo c?u trúc c?a nó. V?y GOPATH và GO MODULE là gì?
+Trước khi Go hỗ trợ [Go module](https://github.com/golang/go/wiki/Modules), giúp cho các lập trình viên đơn giản hóa đối với các package dependency, thì khái niệm GOPATH là khái niệm mà bất kì lập trình viên nào cũng phải biết và xây dựng code theo cấu trúc của nó. Vậy GOPATH và GO MODULE là gì?
 
 ### GOPATH là gì?
 
-GOPATH là noi mà ngôn ng? Go s? tìm d?n và d?c các module bên trong dó cho project.
+GOPATH là nơi mà ngôn ngữ Go sẽ tìm đến và đọc các module bên trong đó cho project.
 
-GOPATH ch?a các thu m?c du?i dây:
+GOPATH chứa các thư mục dưới đây:
 ```
-* $GOPATH/src - Ch?a t?t c? mã ngu?n Go c?a b?n và thu m?c mã ngu?n 3rd party.
-* $GOPATH/pkg - Ch?a các gói.
-* $GOPATH/bin - Ch?a các file nh? phân.
+* $GOPATH/src - Chứa tất cả mã nguồn Go của bạn và thư mục mã nguồn 3rd party.
+* $GOPATH/pkg - Chứa các gói.
+* $GOPATH/bin - Chứa các file nhị phân.
 ```
 ![Go Items](/static/img/go-series/thu-muc.png)
 
 ### GO MODULE là gì?
 
-Ðây là m?t bu?c ti?n quan tr?ng c?a ngôn ng? Go, vi?c qu?n lý Packages s? don gi?n hon, t? phiên b?n [Go v1.11](https://golang.org/doc/go1.11) thì project không còn ph? thu?c vào vi?c khai báo GOPATH n?a. tuy nhiên, GOPATH v?n h? tr? song song ? phiên b?n này.
+Đây là một bước tiến quan trọng của ngôn ngữ Go, việc quản lý Packages sẽ đơn giản hơn, từ phiên bản [Go v1.11](https://golang.org/doc/go1.11) thì project không còn phụ thuộc vào việc khai báo GOPATH nữa. tuy nhiên, GOPATH vẫn hỗ trợ song song ở phiên bản này.
 
-## Chu?n b? và cài d?t:
+## Chuẩn bị và cài đặt:
 
-Trong bài này s? s? d?ng môi tru?ng Linux (ubuntu 16.04) d? làm môi tru?ng cho l?p trình Go. Các môi tru?ng khác nhu MacOS hay Windows thì m?i ngu?i có th? t?i t? [Following link](https://golang.org/dl/). Khuy?n khích s? d?ng Linux ho?c MacOS cho vi?c dev Go.
+Trong bài này sẽ sử dụng môi trường Linux (ubuntu 16.04) để làm môi trường cho lập trình Go. Các môi trường khác như MacOS hay Windows thì mọi người có thể tải từ [Following link](https://golang.org/dl/). Khuyến khích sử dụng Linux hoặc MacOS cho việc dev Go.
 
-T?i và cài d?t phiên b?n 1.11.2 (dã h? tr? cho 1.11.5):
+Tải và cài đặt phiên bản 1.11.2 (đã hỗ trợ cho 1.11.5):
 ```bash
 $ cd /tmp
 $ curl -O https://storage.googleapis.com/golang/go1.11.2.linux-amd64.tar.gz
@@ -45,9 +45,9 @@ $ export GOPATH=$HOME/go
 $ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 $ export PATH=$PATH:/usr/local/go/bin
 ```
-T?o m?t du?ng d?n default b?ng cách dua các tham s? GOROOT, GOPATH và PATH vào ``~/.bashrc`` d? kh?i t?o cùng ``terminal``.
+Tạo một đường dẫn default bằng cách đưa các tham số GOROOT, GOPATH và PATH vào ``~/.bashrc`` để khởi tạo cùng ``terminal``.
 
-Ki?m tra l?i version c?a Go:
+Kiểm tra lại version của Go:
 ```bash
 $ go version
 ```
@@ -55,22 +55,22 @@ $ go version
 
 Note:
 ```
-* M?i m?t project nên t?o 1 folder m?i và tr? GOPATH vào folder dó.
-* N?u dùng GOLANG thì có th? thay d?i trong ``File/Setting/Go/`` và uncheck ``Use GOPATH that's defined in system environment``.
-* N?u dùng CLI thì ``export GOPATH=<du?ng_d?n_c?a_folder>``.
-* S? d?ng ``go get <du?ng_d?n_package>`` d? cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`
+* Mỗi một project nên tạo 1 folder mới và trỏ GOPATH vào folder đó.
+* Nếu dùng GOLANG thì có thể thay đổi trong ``File/Setting/Go/`` và uncheck ``Use GOPATH that's defined in system environment``.
+* Nếu dùng CLI thì ``export GOPATH=<đường_dẫn_của_folder>``.
+* Sử dụng ``go get <đường_dẫn_package>`` để cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`
 ```
 
-V?i Go module thì chúng ta quên các th? ? trên di và ch? c?n ``go mod init <name>`` là xong package dependency và s? t?o ra m?t file là <name>.mod. Ð? build ?ng d?ng thì ch?y ``go build <name>`` và ``./<name>`` d? running.
+Với Go module thì chúng ta quên các thứ ở trên đi và chỉ cần ``go mod init <name>`` là xong package dependency và sẽ tạo ra một file là <name>.mod. Để build ứng dụng thì chạy ``go build <name>`` và ``./<name>`` để running.
 ```
 $ go mod init <name>
 $ go build <name>
 $ ./<name>
 ```
 
-### (Option) Cài d?t và c?u hình công c? jupyer th?n thánh (dã dùng cho python) d? code v?i GO.
+### (Option) Cài đặt và cấu hình công cụ jupyer thần thánh (đã dùng cho python) để code với GO.
 
-Nhu m?i ngu?i dã bi?t, jupyter là m?t công c? m?nh m? d? l?p trình và luu l?i các codes dã du?c ch?y tru?c dó. Du?i dây là hu?ng d?n setup cho jupyter:
+Như mọi người đã biết, jupyter là một công cụ mạnh mẽ để lập trình và lưu lại các codes đã được chạy trước đó. Dưới đây là hướng dẫn setup cho jupyter:
 
 ```bash
 $ sudo apt install python3-pip
@@ -84,7 +84,7 @@ $ mkdir -p ~/.local/share/jupyter/kernels/gophernotes
 $ cp -r $GOPATH/src/github.com/gopherds/gophernotes/kernel/* ~/.local/share/jupyter/kernels/gophernotes
 ```
 
-S?a n?i dung file `kernel.json` trong `$HOME/.local/share/jupyter/kernels/gophernotes` theo bên du?i:
+Sửa nội dung file `kernel.json` trong `$HOME/.local/share/jupyter/kernels/gophernotes` theo bên dưới:
 ```json
 {
 	"argv": [
@@ -97,15 +97,15 @@ S?a n?i dung file `kernel.json` trong `$HOME/.local/share/jupyter/kernels/gopher
 }
 ```
 
-Và ch?y ``jupyter notebook`` t? Host d? b?t server.
+Và chạy ``jupyter notebook`` từ Host để bật server.
 
-K?t qu? d?t du?c nhu sau:
+Kết quả đạt được như sau:
 ![jupyter go](/static/img/go-series/jupyter.png)
 
-T?m k?t ph?n môi tru?ng ? dây và d?i ph?n 2!
+Tạm kết phần môi trường ở đây và đợi phần 2!
 
 
-Author: Nguy?n Van Trung
+Author: Nguyễn Văn Trung
 
 Reference:
 * https://www.melvinvivas.com/go-version-1-11-modules/
