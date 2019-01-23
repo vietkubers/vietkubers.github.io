@@ -54,11 +54,10 @@ $ go version
 ```
 
 
-{% include note.html content=
 * Mỗi một project nên tạo 1 folder mới và trỏ GOPATH vào folder đó.
 * Nếu dùng GOLANG thì có thể thay đổi trong ``File/Setting/Go/`` và uncheck ``Use GOPATH that's defined in system environment``.
 * Nếu dùng CLI thì ``export GOPATH=<đường_dẫn_của_folder>``.
-* Sử dụng ``go get <đường_dẫn_package>`` để cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`" %}
+* Sử dụng ``go get <đường_dẫn_package>`` để cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`
 
 Với Go module thì chúng ta quên các thứ ở trên đi và chỉ cần ``go mod init <name>`` là xong package dependency và sẽ tạo ra một file là <name>.mod. Để build ứng dụng thì chạy ``go build <name>`` và ``./<name>`` để running.
 ```sh
