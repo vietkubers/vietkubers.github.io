@@ -14,6 +14,9 @@ Kubernetes has been an evolving technology for deploying containerized applicati
 
 VietKubers was founded on the basis of learning and sharing our knowledge together in a thriving environment. Founded by the former OpenStack Team at Fujitsu, we hope to bridge the gap of knowledge in the open-source community and lay a new foundation for Kubernetes users in Vietnam in the near future.
 
-Copyright © 2018, [VietKubers](https://github.com/vietkubers). Released under the [MIT License](https://github.com/vietkubers/vietkubers.github.io/blob/master/LICENSE).
+![community](/images/community.jpg)
+
+{:.image-caption}
+*The 1st Meetup of VietKubers*
 
 {% include links.html %}
