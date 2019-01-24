@@ -3,6 +3,7 @@ title: How to public your posts to github-page?
 tags: [tutorials]
 keywords: tutorials, git, github
 last_updated: November 23, 2018
+summary: "This document is a guide to help you through the process of contributing to the VietKubers Tech Blog"
 sidebar: mydoc_sidebar
 permalink: 2018-11-23-public_to_github-page.html
 folder: mydoc
