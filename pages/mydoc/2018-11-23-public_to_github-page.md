@@ -13,9 +13,9 @@ folder: mydoc
 ```
 $ git clone https://github.com/$USER/vietkubers.github.io.git
 ```
-3. **Create** a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) file in folder [_post](https://github.com/vietkubers/vietkubers.github.io/tree/master/_posts) and name it as `yyyy-mm-dd-name-of-article.md`
+3. **Create** a [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) file in folder [pages/mydoc](https://github.com/vietkubers/vietkubers.github.io/tree/master/pages/mydoc) and name it as `yyyy-mm-dd-name-of-article.md`
 ```
-$ cd vietkubers.github.io.git/_post
+$ cd vietkubers.github.io.git/pages/mydoc
 $ touch yyyy-mm-dd-name-of-article.md
 ```
 4. **Modify** the created post with declaration section as:
@@ -30,7 +30,7 @@ permalink: yyyy-mm-dd-name-of-article.html
 folder: mydoc
 ---
 ```
-Please refer to [this example post](https://raw.githubusercontent.com/vietkubers/vietkubers.github.io/master/_posts/2018-11-21-deploying-multiplenodes-with-kubeadm.md) for more details.  
+Please refer to [this example post](https://raw.githubusercontent.com/vietkubers/vietkubers.github.io/master/pages/mydoc/2018-11-19-cgroups.md) for more details.  
 5. **Commit**, **push** and create your **Pull Request**  
 For the step-by-step process, refer to this article [1]
 
