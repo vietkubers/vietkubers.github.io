@@ -72,7 +72,7 @@ $ go build <name>
 $ ./<name>
 ```
 
-### (Option) Cài đặt và cấu hình công cụ jupyer thần thánh (đã dùng cho python) để code với GO
+### (Option) Cài đặt và cấu hình công cụ jupyter thần thánh (đã dùng cho python) để code với GO
 
 Như mọi người đã biết, jupyter là một công cụ mạnh mẽ để lập trình và lưu lại các codes đã được chạy trước đó. Dưới đây là hướng dẫn setup cho jupyter:
 
