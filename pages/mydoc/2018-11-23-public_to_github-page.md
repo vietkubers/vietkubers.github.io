@@ -37,7 +37,7 @@ For the step-by-step process, refer to this article [1]
 
 **Reference**
 
-[1] https://vietkubers.github.io/linux/tutorials/kubernetes/2018/11/16/github-workflow.html  
+[1] https://vietkubers.github.io/2018-16-16-github-workflow.html
 
 
 
