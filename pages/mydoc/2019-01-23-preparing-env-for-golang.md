@@ -8,13 +8,13 @@ permalink: 2019-01-23-preparing-env-for-golang.html
 folder: mydoc
 ---
 
-## Sơ lược về ngôn ngữ GO:
+## 1. Sơ lược về ngôn ngữ GO
 
 Go là một ngôn ngữ lập trình mã nguồn mở [Open Source](https://github.com/golang/go), là ngôn ngữ dạng biên dịch. Go có cộng đồng phát triển lớn và có 1 hệ thống để kiểm duyệt code như [Openstack](https://review.openstack.org) là [Go review](https://go-review.googlesource.com/q/status:open).
 
 Trước khi Go hỗ trợ [Go module](https://github.com/golang/go/wiki/Modules), giúp cho các lập trình viên đơn giản hóa đối với các package dependency, thì khái niệm GOPATH là khái niệm mà bất kì lập trình viên nào cũng phải biết và xây dựng code theo cấu trúc của nó. Vậy GOPATH và GO MODULE là gì?
 
-### GOPATH là gì?
+### 1.1. GOPATH là gì?
 
 GOPATH là nơi mà ngôn ngữ Go sẽ tìm đến và đọc các module bên trong đó cho project.
 
@@ -26,11 +26,11 @@ GOPATH chứa các thư mục dưới đây:
 ```
 ![Go Items](/static/img/go-series/thu-muc.png)
 
-### GO MODULE là gì?
+### 1.2. GO MODULE là gì?
 
 Đây là một bước tiến quan trọng của ngôn ngữ Go, việc quản lý Packages sẽ đơn giản hơn, từ phiên bản [Go v1.11](https://golang.org/doc/go1.11) thì project không còn phụ thuộc vào việc khai báo GOPATH nữa. tuy nhiên, GOPATH vẫn hỗ trợ song song ở phiên bản này.
 
-## Chuẩn bị và cài đặt:
+## 2. Chuẩn bị và cài đặt
 
 Trong bài này sẽ sử dụng môi trường Linux (ubuntu 16.04) để làm môi trường cho lập trình Go. Các môi trường khác như MacOS hay Windows thì mọi người có thể tải từ [Following link](https://golang.org/dl/). Khuyến khích sử dụng Linux hoặc MacOS cho việc dev Go.
 
@@ -53,11 +53,17 @@ Kiểm tra lại version của Go:
 $ go version
 ```
 
+{% include note.html content="  
 
-* Mỗi một project nên tạo 1 folder mới và trỏ GOPATH vào folder đó.
-* Nếu dùng GOLANG thì có thể thay đổi trong ``File/Setting/Go/`` và uncheck ``Use GOPATH that's defined in system environment``.
-* Nếu dùng CLI thì ``export GOPATH=<đường_dẫn_của_folder>``.
-* Sử dụng ``go get <đường_dẫn_package>`` để cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`
+- Mỗi một project nên tạo 1 folder mới và trỏ GOPATH vào folder đó.  
+
+- Nếu dùng GOLANG thì có thể thay đổi trong ``File/Setting/Go/`` và uncheck ``Use GOPATH that's defined in system environment``.  
+
+- Nếu dùng CLI thì ``export GOPATH=<đường_dẫn_của_folder>``.  
+
+- Sử dụng ``go get <đường_dẫn_package>`` để cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`  
+
+" %}
 
 Với Go module thì chúng ta quên các thứ ở trên đi và chỉ cần ``go mod init <name>`` là xong package dependency và sẽ tạo ra một file là <name>.mod. Để build ứng dụng thì chạy ``go build <name>`` và ``./<name>`` để running.
 ```sh
@@ -66,7 +72,7 @@ $ go build <name>
 $ ./<name>
 ```
 
-### (Option) Cài đặt và cấu hình công cụ jupyer thần thánh (đã dùng cho python) để code với GO.
+### (Option) Cài đặt và cấu hình công cụ jupyer thần thánh (đã dùng cho python) để code với GO
 
 Như mọi người đã biết, jupyter là một công cụ mạnh mẽ để lập trình và lưu lại các codes đã được chạy trước đó. Dưới đây là hướng dẫn setup cho jupyter:
 
@@ -103,8 +109,8 @@ Kết quả đạt được như sau:
 Tạm kết phần môi trường ở đây và đợi phần 2!
 
 
-Author: Nguyễn Văn Trung
+Author: [trungnvfet](https://github.com/trungnvfet)
 
-## References:
+## 3. References
 * https://www.melvinvivas.com/go-version-1-11-modules/
 * https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-16-04
