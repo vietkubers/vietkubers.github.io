@@ -29,7 +29,7 @@ Thông tin các POD & services của Kubernetes
 Hiện tại, mình mới tìm ra được 2 giải pháp để hỗ trợ cho việc test code cho mô hình ``multi-nodes`` với ``kubeadm``, gồm:
 
 * Solution 1: Thực hiện trực tiếp trên POD chạy services của Kubernetes
-* Solution 2: Crash POD chạy services mình muốn và chạy trực tiếp service đó trên Node.
+* Solution 2: Crash POD chạy services mình muốn và chạy trực tiếp service đó trên Node
 
 Trong bài này, mình lấy ví dụ với service ``Scheduler`` để thực hiện. Như mọi người đã biết, Kubernetes hỗ trợ [Self-hosting](https://thenewstack.io/kubernetes-now-does-self-hosting-with-kubeadm/). Vì vậy chúng ta sẽ thấy các services sẽ chạy dưới dạng POD. Vì vậy các container sẽ run và lưu logs trên mỗi container riêng biệt.
 
@@ -41,12 +41,14 @@ $ cd $GOPATH/src/kubernetes
 $ make # Perform compile all of services and write into _output folder
 $ cd _output/ # To check all compiled components.
 ```
+{% include note.html content="  
 
-Note:
-* Chúng ta có thể compile từng services/component trong K8s như kubeadm, kubectl, kube-api hoặc kube-scheduler. e.g: ``make WHAT=cmd/kubeadm``
+Chúng ta có thể compile từng services/component trong K8s như kubeadm, kubectl, kube-api hoặc kube-scheduler. e.g: ``make WHAT=cmd/kubeadm``
+
+" %}
 ![K8s Items](/static/img/compile_go_k8s/compile.png)
 
-### Solution 1:
+### Solution 1: Thực hiện trực tiếp trên POD chạy services của Kubernetes
 
 Để thực hiện được giải pháp này, chúng ta cần truy cập và container và đẩy code mới vào trong container chứa service cần thay đổi.
 
@@ -74,7 +76,7 @@ $ docker cp <?> <?>
 $ docker restart <docker_id>
 ```
 
-### Solution 2:
+### Solution 2: Crash POD chạy services mình muốn và chạy trực tiếp service đó trên Node
 
 Đây là cách tiếp cận của mình và nó sẽ giúp cho việc Debug bằng ``GoLand``. Với giải pháp này thì mình sẽ `break` POD của scheduler và chạy trực tiếp service đó trên Host. Như vậy, sẽ giúp mình check logs dễ dàng hơn.
 
@@ -92,7 +94,6 @@ $ kubectl --v=8 logs kube-scheduler-masternode -n kube-system
 ![K8s Items](/static/img/compile_go_k8s/error_pod_svc.png)
 
 Và 
-
 ```bash
 $ Kubectl get pod –all-namespaces
 ```
