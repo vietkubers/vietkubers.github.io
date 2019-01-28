@@ -109,7 +109,7 @@ Kết quả đạt được như sau:
 Tạm kết phần môi trường ở đây và đợi phần 2!
 
 
-Author: [trungnvfet](https://github.com/trungnvfet)
+Author: [Nguyễn Văn Trung](https://github.com/trungnvfet) - IRC: trungnv
 
 ## 3. References
 * https://www.melvinvivas.com/go-version-1-11-modules/
