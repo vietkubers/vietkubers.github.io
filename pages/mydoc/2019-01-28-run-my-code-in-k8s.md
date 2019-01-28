@@ -3,13 +3,13 @@ title: How to test my code (Go) on Kubernetes (K8s)
 tags: [go, tutorials, kubernetes]
 keywords: go
 last_updated: January 28, 2019
-summary: "Làm thế nào để tôi có thể test (kiểm tra) code của tôi trên cụm cluster của Kubernetes là mục tiêu của bài viết này. Trong bài viết này tôi đề cập đến trường hợp multi-node với kubeadm. Với mô hình [all-in-one](https://github.com/kubernetes/kubernetes) thì apply code trực tiếp vào ``$GOPATH/src/k8s.io/kubernetes`` và ``./hack/local-up-cluster.sh`` là ok."
+summary: "Làm thế nào để tôi có thể test (kiểm tra) code của tôi trên cụm cluster của Kubernetes là mục tiêu của bài viết này. Trong bài viết này tôi đề cập đến trường hợp multi-node với kubeadm. Với mô hình all-in-one (https://github.com/kubernetes/kubernetes) thì apply code trực tiếp vào $GOPATH/src/k8s.io/kubernetes và ./hack/local-up-cluster.sh là ok."
 sidebar: mydoc_sidebar
 permalink: 2019-01-28-run-my-code-in-k8s.html
 folder: mydoc
 ---
 
-
+<span class="label label-success">Golang</span>
 ## 1. Các bước chuẩn bị
 
 - Mô hình cụm kubernetes 3 nodes (3 VM) hoặc nhiều hơn: 1 master và 2 worker nodes. [Link](https://vietkubers.github.io/2018-11-21-deploying-multiplenodes-with-kubeadm.html)
@@ -41,11 +41,8 @@ $ cd $GOPATH/src/kubernetes
 $ make # Perform compile all of services and write into _output folder
 $ cd _output/ # To check all compiled components.
 ```
-{% include note.html content="  
-
-Chúng ta có thể compile từng services/component trong K8s như kubeadm, kubectl, kube-api hoặc kube-scheduler. e.g: ``make WHAT=cmd/kubeadm``
-
-" %}
+{% include note.html content=" Chúng ta có thể compile từng services/component trong K8s như kubeadm, kubectl, kube-api hoặc kube-scheduler.  
+e.g: ``make WHAT=cmd/kubeadm``" %}
 ![K8s Items](/static/img/compile_go_k8s/compile.png)
 
 ### Solution 1: Thực hiện trực tiếp trên POD chạy services của Kubernetes
@@ -134,5 +131,7 @@ $ sudo ./kube-scheduler --address=127.0.0.1 --kubeconfig=/etc/kubernets/schedule
 
 Author: [Nguyễn Văn Trung](https://github.com/trungnvfet) - IRC: trungnv
 
-## 3. References:
+## 3. References
 - https://docs.microsoft.com/en-us/virtualization/windowscontainers/kubernetes/compiling-kubernetes-binaries
+
+{% include links.html %}
