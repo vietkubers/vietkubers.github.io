@@ -1,18 +1,14 @@
 ---
-title: Import trong Golang
+title: How to test my code (Go) on Kubernetes (K8s)
 tags: [go, tutorials, kubernetes]
 keywords: go
 last_updated: January 28, 2019
-summary: "How to test my code (Go) on Kubernetes (K8s)"
+summary: "Làm thế nào để tôi có thể test (kiểm tra) code của tôi trên cụm cluster của Kubernetes là mục tiêu của bài viết này. Trong bài viết này tôi đề cập đến trường hợp multi-node với kubeadm. Với mô hình [all-in-one](https://github.com/kubernetes/kubernetes) thì apply code trực tiếp vào ``$GOPATH/src/k8s.io/kubernetes`` và ``./hack/local-up-cluster.sh`` là ok."
 sidebar: mydoc_sidebar
 permalink: 2019-01-28-run-my-code-in-k8s.html
 folder: mydoc
 ---
 
-How to test my code (Go) on Kubernetes (K8s)?
-=============================================
-
-Làm thế nào để tôi có thể test (kiểm tra) code của tôi trên cụm cluster của Kubernetes là mục tiêu của bài viết này. Trong bài viết này tôi đề cập đến trường hợp multi-node với kubeadm. Với mô hình [all-in-one](https://github.com/kubernetes/kubernetes) thì apply code trực tiếp vào ``$GOPATH/src/k8s.io/kubernetes`` và ``./hack/local-up-cluster.sh`` là ok.
 
 ## 1. Các bước chuẩn bị
 
