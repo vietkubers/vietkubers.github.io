@@ -67,11 +67,13 @@ $ sudo apt-get install -y apt-transport-https
 $ sudo apt-get install -y docker.io
 ```
 
-Deploy single cluster with minikube --vm-driver none
+Deploy single cluster with minikube
 ```sh
 $ export no_proxy=$no_proxy,[Your_Ip]
 $ export CHANGE_MINIKUBE_NONE_USER=true
 $ sudo minikube start --vm-driver=none --logtostderr
+or
+$ sudo minikube start --network-plugin=cni --extra-config=kubelet.network-plugin=cni --memory=5120 --docker-env http_proxy=$http_proxy --docker-env https_proxy=$https_proxy --docker-env no_proxy=$no_proxy,192.168.99.0/24 --logtostderr
 ```
 
 Run minikube without sudo
