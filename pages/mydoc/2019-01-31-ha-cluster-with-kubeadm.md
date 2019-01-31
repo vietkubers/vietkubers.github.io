@@ -40,7 +40,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni --allow-unauthenticated
 ```
 
-{% include note.html content="If your machines (all of the above VMs) run behind the **proxy**, please follow the instructions below. If NO, skip it and go to [section 1.2](12-installing-haproxy-load-balancer)" %}
+{% include note.html content="If your machines (all of the above VMs) run behind the **proxy**, please follow the instructions below. If NO, skip it and go to [section 1.3](#13-installing-haproxy-load-balancer)" %}
 
 **Configuring proxy for apt**
 ```sh
