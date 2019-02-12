@@ -200,7 +200,7 @@ done
 ```sh
 root@k8s-master1:~# sh copy.sh
 ```
-After running successfully `copy.sh`, the certificates will be located in directory `/root` of nodes: **master1** and **master2**.
+After running successfully `copy.sh`, the certificates will be located in directory `/root` of nodes: **master2** and **master3**.
 
 ### 2.2. Steps for the rest of the master nodes
 
@@ -258,9 +258,9 @@ $ sudo kubeadm join 192.168.1.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discover
 ```
 ## 3. References
 
-[1] https://kubernetes.io/docs/setup/independent/high-availability/
+[1] https://kubernetes.io/docs/setup/independent/high-availability/  
 
 
-Author: [truongnh1992](https://github.com/truongnh1992) - Email: nguyenhaitruonghp[at]gmail[dot]com
+*Author: [truongnh1992](https://github.com/truongnh1992)* - Email: nguyenhaitruonghp[at]gmail[dot]com
 
 {% include links.html %}
