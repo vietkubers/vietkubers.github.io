@@ -6,4 +6,6 @@ Founded by the former OpenStack Team at Fujitsu, we hope to bridge the gap of kn
 
 https://vietkubers.github.io/
 
+Visit us on [Social Network](https://www.facebook.com/groups/VietKubers/).
+
 Copyright © 2018, [VietKubers](https://github.com/vietkubers). Released under the [MIT License](https://github.com/vietkubers/vietkubers.github.io/blob/master/LICENSE).
