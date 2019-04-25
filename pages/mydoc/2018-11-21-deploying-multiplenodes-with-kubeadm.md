@@ -71,7 +71,7 @@ $ sudo apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni --all
 ```sh
 $ sudo apt-get install -qy kubelet=<version> kubectl=<version> kubeadm=<version> kubernetes-cni --allow-unauthenticated
 ```
-**<version>** is:
+**version** is:
 ```sh
 $ curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'
 ```
