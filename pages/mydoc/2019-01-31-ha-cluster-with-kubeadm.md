@@ -264,6 +264,12 @@ All of worker nodes can be joined to the cluster by command:
 ```sh
 $ sudo kubeadm join 10.0.2:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0
 ```
+
+**The result:**
+
+![nodess](/static/img/multi-master-ha/nodess.PNG)
+
+
 ## 3. References
 
 [1] https://kubernetes.io/docs/setup/independent/high-availability/  
