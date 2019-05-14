@@ -61,7 +61,7 @@ Environment="HTTP_PROXY=http://[Proxy_Server]:[Proxy_Port]/"
 
 ### 1.3. Installing HAproxy load balancer
 
-Installing haproxy on `ha machine` (IP: 192.168.1.33)
+Installing haproxy on `ha machine` (IP: 10.0.2.33)
 ```sh
 $ sudo apt-get install haproxy
 ```
@@ -81,7 +81,7 @@ global
 ...
 
 frontend kubernetes
-        bind 192.168.1.33:6443
+        bind 10.0.2.33:6443
         option tcplog
         mode tcp
         default_backend kubernetes-master-nodes
@@ -90,16 +90,16 @@ backend kubernetes-master-nodes
         mode tcp
         balance roundrobin
         option tcp-check
-        server k8s-master1 192.168.1.11:6443 check fall 3 rise 2
-        server k8s-master2 192.168.1.12:6443 check fall 3 rise 2
-        server k8s-master3 192.168.1.13:6443 check fall 3 rise 2
+        server k8s-master1 10.0.2.11:6443 check fall 3 rise 2
+        server k8s-master2 10.0.2.12:6443 check fall 3 rise 2
+        server k8s-master3 10.0.2.13:6443 check fall 3 rise 2
 ```
 
 {% include note.html content="  
 
 - The health check for an apiserver is a TCP check on the port which the kube-apiserver listen on. The default value: **6443**    
 
-- In frontend section: bind to `ha machine` IP address (192.168.1.33)  
+- In frontend section: bind to `ha machine` IP address (10.0.2.33)  
 
 - In backend section: Notice the hostname and IP address of 3 master nodes    
 
@@ -114,7 +114,7 @@ $ sudo systemctl restart haproxy.service
 
 ### 2.1. Steps for the 1st master node
 
-On the master node `master1` (IP: 192.168.1.11), create a configuration file `kubeadm-config.yaml`:
+On the master node `master1` (IP: 10.0.2.11), create a configuration file `kubeadm-config.yaml`:
 
 ```yaml
 apiVersion: kubeadm.k8s.io/v1beta1
@@ -122,8 +122,8 @@ kind: ClusterConfiguration
 kubernetesVersion: stable
 apiServer:
   certSANs:
-  - "192.168.1.33"
-controlPlaneEndpoint: "192.168.1.33:6443"
+  - "10.0.2.33"
+controlPlaneEndpoint: "10.0.2.33:6443"
 ```
 
 {% include note.html content="  
@@ -134,7 +134,7 @@ controlPlaneEndpoint: "192.168.1.33:6443"
 
 " %}
 
-Deploying node master1:
+**Deploying node master1:**
 
 ```sh
 $ sudo kubeadm init --config=kubeadm-config.yaml
@@ -146,10 +146,10 @@ The terminal will print something like this:
 You can now join any number of machines by running the following on each node
 as root:
 
-kubeadm join 192.168.1.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0
+kubeadm join 10.0.2.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0
 ```
 
-{% include tip.html content="Save the output **kubeadm join 192.168.1.33:6443 --token...** to a text file in order to join other `master nodes` to the cluster." %}
+{% include tip.html content="Save the output **kubeadm join 10.0.2.33:6443 --token...** to a text file in order to join other `master nodes` to the cluster." %}
 
 Applying the [Weave](https://www.weave.works/blog/cni-for-docker-containers/) CNI plugin:
 ```sh
@@ -181,7 +181,7 @@ weave-net-cqb88                       2/2     Running   0          4h22m
 $ vim copy.sh
 
 USER=root
-MASTER_NODE_IPS="192.168.1.12 192.168.1.13"
+MASTER_NODE_IPS="10.0.2.12 10.0.2.13"
 for host in ${MASTER_NODE_IPS}; do
    scp /etc/kubernetes/pki/ca.crt "${USER}"@$host:
    scp /etc/kubernetes/pki/ca.key "${USER}"@$host:
@@ -236,12 +236,12 @@ Start **`kubeadm join`** on nodes master2 and master3 using the join command in 
 
 **On node master2:**
 ```sh
-$ sudo kubeadm join 192.168.1.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0 --experimental-control-plane
+$ sudo kubeadm join 10.0.2.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0 --experimental-control-plane
 ```
 
 **On node master3:**
 ```sh
-$ sudo kubeadm join 192.168.1.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0 --experimental-control-plane
+$ sudo kubeadm join 10.0.2.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0 --experimental-control-plane
 ```
 
 **Verifying that the pods of the components are ready**:
@@ -254,7 +254,7 @@ $ sudo kubectl get pod -n kube-system -w
 All of worker nodes can be joined to the cluster by command:
 
 ```sh
-$ sudo kubeadm join 192.168.1.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0
+$ sudo kubeadm join 10.0.2:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0
 ```
 ## 3. References
 
