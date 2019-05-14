@@ -239,15 +239,23 @@ Start **`kubeadm join`** on nodes master2 and master3 using the join command in 
 $ sudo kubeadm join 10.0.2.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0 --experimental-control-plane
 ```
 
+![master2-join](/static/img/multi-master-ha/join-master2.PNG)
+
+
 **On node master3:**
 ```sh
 $ sudo kubeadm join 10.0.2.33:6443 --token 7ju4yg.5x2xaj96xqx18qwq --discovery-token-ca-cert-hash sha256:4d7c5ef142e4faca3573984119df92a1a188115723f1e81dbb27eeb039cac1e0 --experimental-control-plane
 ```
 
+![master3-join](/static/img/multi-master-ha/join-master3.PNG)
+
 **Verifying that the pods of the components are ready**:
 ```sh
 $ sudo kubectl get pod -n kube-system -w
 ```
+
+![pods](/static/img/multi-master-ha/pod-components.PNG)
+
 
 ### 2.3. Installing workers
 
