@@ -22,7 +22,7 @@ The bare-metal server runs Ubuntu Server 16.04 and there are 9 Virtual Machines 
 * 5 worker nodes
 * 1 HAproxy load balancer
 
-![nodes_configuration](/static/img/multi-master-ha/nodes_configuration.PNG)
+![nodes_configuration](/static/img/multi-master-ha/nodes_configuration.JPG)
 
 {:.image-caption}
 *The configurations of nodes*
