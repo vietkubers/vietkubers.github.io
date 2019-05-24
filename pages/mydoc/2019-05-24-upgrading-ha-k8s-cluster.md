@@ -3,7 +3,7 @@ title: Upgrading kubeadm HA K8S cluster from v1.13.5 to v1.14.0
 tags: [tutorials, kubernetes]
 keywords: tutorials, kubernetes
 last_updated: May 24, 2019
-summary: "kubeadm is a tool which is a part of the Kubernetes project. It helps you deploy a Kubernetes cluster. This article will show you the way to upgrade a Highly Available Kubernetes cluster from v1.13.5 to v1.14.0"
+summary: "kubeadm is a tool which is a part of the Kubernetes project. It helps you deploy a Kubernetes cluster. This article will show you the way to upgrade a Highly Available Kubernetes cluster from v1.13.5 to v1.14.0."
 sidebar: mydoc_sidebar
 permalink: 2019-05-24-upgrading-ha-k8s-cluster.html
 folder: mydoc
@@ -209,6 +209,7 @@ sudo systemctl restart kubelet
 sudo kubectl uncordon $WORKERNODE
 ```
 
+### 5. Verifying the K8s cluster version
 
 <span class="label label-danger">The cluster is upgraded successfully to v1.14.0</span>
 ```
@@ -222,7 +223,7 @@ k8s-worker2   Ready    <none>   20h   v1.14.0
 k8s-worker3   Ready    <none>   20h   v1.14.0
 ```
 
-### 5. References
+### 6. References
 
 [1] https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha-1-13/  
 [2] https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-14/  
