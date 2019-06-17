@@ -433,7 +433,8 @@ wordpress-nlncd                 1/1     Running   0          18s
 
 *Author:
 
-[Nguyen Hai Truong](https://github.com/truongnh1992)* - Email: nguyenhaitruonghp[at]gmail[dot]com
+[Nguyen Hai Truong](https://github.com/truongnh1992)* - Email: nguyenhaitruonghp[at]gmail[dot]com  
+
 [Nguyen Phuong An](https://github.com/annp1987)* - Email: annp.cs51[at]gmail[dot]com
 
 
