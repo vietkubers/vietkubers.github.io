@@ -16,7 +16,7 @@ folder: mydoc
 
 All the yaml files used in this tutorial are located [here](https://github.com/vietkubers/vietkubers.github.io/tree/master/stateful-mysql-wordpress).
 
-### 1. Deploying multi-master nodes (High Availability) K8S cluster
+## 1. Deploying multi-master nodes (High Availability) K8S cluster
 
 Follow this [tutorial guide](https://vietkubers.github.io/2019-01-31-ha-cluster-with-kubeadm.html) in order to deploy multi-master node (HA) K8S cluster.
 
@@ -39,7 +39,7 @@ k8s-worker2   Ready    <none>   19h   v1.13.5   10.164.178.234   <none>
 k8s-worker3   Ready    <none>   19h   v1.13.5   10.164.178.235   <none>
 ```
 
-### 2. Creating Persistent Volume Claims and Persistent Volumes
+## 2. Creating Persistent Volume Claims and Persistent Volumes
 
 WordPress is a stateful application, so it relies on two persistent backends:
 - Persistent volume storage
@@ -52,7 +52,7 @@ A [NFS](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/ch-n
 {:.image-caption}
 *Network File Storage*
 
-#### 2.1. Installing and configuring NFS server
+### 2.1. Installing and configuring NFS server
 
 Installing NFS server on Linux machine (In this case, it will be installed on HA machine (IP: 10.164.178.238))
 
@@ -81,7 +81,7 @@ sudo mkdir -p /opt/data/vol/{0,1,2}
 sudo mkdir -p /opt/data/content
 ```
 
-#### 2.2. Auto-mounting NFS at boot-time
+### 2.2. Auto-mounting NFS at boot-time
 
 In each worker node, running the below commands.
 
@@ -122,11 +122,11 @@ sudo systemctl enable autofs
 sudo /lib/systemd/systemd-sysv-install enable autofs
 ```
 
-#### 2.3. Creating PVC and PV
+### 2.3. Creating PVC and PV
 
 Creating Persistent Volumes (PV) and Persistent Volume Claims (PVC) used by MySQL.
 
-Firstly, provisioning 3 PVs that are based on NFS. The directory `/opt/data/vol/0` will be assigned to the PV called `mysql-pv0`, the remaining PVs are: `mysql-pv1` and `mysql-pv2`. Each PV will be claimed by a PVC, which will be mapped to the Pod Volume of the StatefulSet.
+Firstly, provisioning 3 PVs that are based on NFS. The directory **/opt/data/vol/0** will be assigned to the PV called **mysql-pv0**, the remaining PVs are: **mysql-pv1** and **mysql-pv2**. Each PV will be claimed by a PVC, which will be mapped to the Pod Volume of the StatefulSet.
 
 ```yaml
 apiVersion: v1
@@ -184,7 +184,7 @@ db-wordpress-mysql-2             Bound    mysql-pv1       1Gi        RWX
 
 Creating Persistent Volumes (PV) and Persistent Volume Claims (PVC) used by WordPress.
 
-The directory `/opt/data/content/0` will be assigned to the PV called `wordpress-pv0`, the remaining PVs are: `wordpress-pv1` and `wordpress-pv2` and they are claimed by `wordpress-persistent-storage-0`, `wordpress-persistent-storage-1` and `wordpress-persistent-storage-2` respectively.
+The directory **/opt/data/content/0** will be assigned to the PV called **wordpress-pv0**, the remaining PVs are: **wordpress-pv1** and **wordpress-pv2** and they are claimed by **wordpress-persistent-storage-0**, **wordpress-persistent-storage-1** and **wordpress-persistent-storage-2** respectively.
 
 ```yaml
 apiVersion: v1
@@ -240,7 +240,7 @@ wordpress-persistent-storage-1   Bound    wordpress-pv2   1Gi        RWX        
 wordpress-persistent-storage-2   Bound    wordpress-pv1   1Gi        RWX                           3d3h    
 ```
 
-### 3. Deploying MySQL
+## 3. Deploying MySQL
 
 Creating a Secret for MySQL with the below yaml file.
 ```yaml
@@ -337,7 +337,7 @@ wordpress-mysql-2               1/1     Running   0          18s
 ```
 
 
-### 4. Deploying WordPress
+## 4. Deploying WordPress
 
 WordPress pods will be configured as a [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/).
 
@@ -422,10 +422,12 @@ wordpress-nlncd                 1/1     Running   0          18s
 ```
 
 **Done.**
+![WordPress-site](/static/img/multi-master-ha/WordPress-site.PNG)
 
-### 5. References
+## 5. References
 
-[1] https://thenewstack.io/deploy-highly-available-wordpress-instance-statefulset-kubernetes-1-5/
+[1] https://thenewstack.io/deploy-highly-available-wordpress-instance-statefulset-kubernetes-1-5/  
+
 [2] https://medium.com/@containerum/how-to-deploy-wordpress-and-mysql-on-kubernetes-bda9a3fdd2d5
 
 
