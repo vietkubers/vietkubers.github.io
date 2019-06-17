@@ -18,3 +18,5 @@ topnav_dropdowns:
       folderitems:
         - title: 1st Meetup
           external_url: https://www.meetup.com/Vietkubers-Vietnam-Kubernetes-Community/events/257150787/
+        - title: Google Cloud Next'19 Extend Hanoi - VietKubers Meetup #2
+          external_url: https://www.meetup.com/Vietkubers-Vietnam-Kubernetes-Community/events/261417540/
