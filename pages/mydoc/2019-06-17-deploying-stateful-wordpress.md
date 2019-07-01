@@ -355,10 +355,11 @@ spec:
   selector:
     app: wordpress
     tier: frontend
-  type: ClusterIP
+  type: LoadBalancer
+
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
-kind: Deployment
+kind: ReplicaSet
 metadata:
   name: wordpress
   labels:
@@ -369,8 +370,6 @@ spec:
     matchLabels:
       app: wordpress
       tier: frontend
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -394,14 +393,8 @@ spec:
         volumeMounts:
         - name: wordpress-persistent-storage
           mountPath: /var/www/html          # which data will be stored
-  volumeClaimTemplates:
-  - metadata:
-      name: wordpress-persistent-storage
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-storage: 1Gi
+      volumes:
+        - name: wordpress-persistent-storage
 ```
 
 ```sh
