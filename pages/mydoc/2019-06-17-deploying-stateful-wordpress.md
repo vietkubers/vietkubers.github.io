@@ -339,6 +339,37 @@ wordpress-mysql-2               1/1     Running   0          18s
 
 ## 4. Deploying WordPress
 
+### 4.1. Installing LoadBalancer
+
+Before deploying WordPress, let deploy `metallb` in order to access WP from outside of the cluster.
+
+```sh
+sudo kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.7.3/manifests/metallb.yaml
+```
+
+Creating `configmap.yaml`
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 10.164.178.79-10.164.178.80
+```
+
+```sh
+sudo kubectl apply -f configmap.yaml
+sudo kubectl get pods -n metallb-system
+```
+
+### 4.2. Deploying WP
+
 WordPress pods will be configured as a [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/).
 
 ```yaml
@@ -424,11 +455,11 @@ wordpress-nlncd                 1/1     Running   0          18s
 [2] https://medium.com/@containerum/how-to-deploy-wordpress-and-mysql-on-kubernetes-bda9a3fdd2d5
 
 
-*Author:
+*Author:*
 
-[Nguyen Hai Truong](https://github.com/truongnh1992)* - Email: nguyenhaitruonghp[at]gmail[dot]com  
+[Nguyen Hai Truong](https://github.com/truongnh1992) - Email: nguyenhaitruonghp[at]gmail[dot]com  
 
-[Nguyen Phuong An](https://github.com/annp1987)* - Email: annp.cs51[at]gmail[dot]com
+[Nguyen Phuong An](https://github.com/annp1987) - Email: annp[dot]cs51[at]gmail[dot]com
 
 
 {% include links.html %}
