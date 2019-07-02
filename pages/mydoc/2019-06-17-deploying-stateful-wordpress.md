@@ -445,7 +445,7 @@ wordpress-lmrmh                 1/1     Running   0          19s
 wordpress-nlncd                 1/1     Running   0          18s
 ```
 
-Service wordpress has type `LoadBalancer` and has a External-IP.
+Service wordpress has type `LoadBalancer` and has a EXTERNAL-IP.
 
 ```sh
 master1@k8s-master1:~$ sudo kubectl get svc
@@ -456,7 +456,8 @@ wordpress-mysql   ClusterIP      None            <none>           3306/TCP      
 ```
 
 **Done.**
-Now we can access the WordPress site with address http://External-IP
+Now we can access the WordPress site with address http://EXTERNAL-IP   
+
 ![WordPress-site](/static/img/multi-master-ha/WordPress-site.PNG)
 
 ## 5. References
