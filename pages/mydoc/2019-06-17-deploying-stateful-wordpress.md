@@ -360,7 +360,7 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 10.164.178.79-10.164.178.80
+      - 10.164.178.179-10.164.178.180
 ```
 
 ```sh
@@ -445,7 +445,18 @@ wordpress-lmrmh                 1/1     Running   0          19s
 wordpress-nlncd                 1/1     Running   0          18s
 ```
 
+Service wordpress has type `LoadBalancer` and has a External-IP.
+
+```sh
+master1@k8s-master1:~$ sudo kubectl get svc
+NAME              TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+kubernetes        ClusterIP      10.96.0.1       <none>           443/TCP        7d6h
+wordpress         LoadBalancer   10.111.108.37   10.164.178.179   80:30273/TCP   15h
+wordpress-mysql   ClusterIP      None            <none>           3306/TCP       16h
+```
+
 **Done.**
+Now we can access the WordPress site with address http://External-IP
 ![WordPress-site](/static/img/multi-master-ha/WordPress-site.PNG)
 
 ## 5. References

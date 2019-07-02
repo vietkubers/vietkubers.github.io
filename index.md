@@ -17,6 +17,6 @@ VietKubers was founded on the basis of learning and sharing our knowledge togeth
 ![community](/images/community.jpg)
 
 {:.image-caption}
-*The 1st Meetup of VietKubers*
+*Google Cloud Next'19 Extended Hanoi - VietKubers Meetup #2*
 
 {% include links.html %}
